@@ -11,12 +11,20 @@ namespace WordUnscrambler
     {
         public string[] Read(string filename)
         {
-            char[] array = new char[char.MaxValue];
-            StreamReader reader = new StreamReader(filename);
-            while (!reader.EndOfStream)
+            using (StreamReader reader = new StreamReader(filename))
             {
-                char c = (char)reader.Read();
-                array.add(c);
+
+                string content = reader.ReadToEnd();
+                char[] characters = content.ToCharArray();
+
+                
+                string[] charArray = new string[characters.Length];
+                for (int i = 0; i < characters.Length; i++)
+                {
+                    charArray[i] = characters[i].ToString();
+                }
+
+                return charArray;
             }
         }
     }
