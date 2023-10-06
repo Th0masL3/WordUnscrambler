@@ -11,9 +11,13 @@ namespace WordUnscrambler
     {
         public string[] Read(string filename)
         {
-            // Your Code here!
-
-            return null;
+            char[] array = new char[char.MaxValue];
+            StreamReader reader = new StreamReader(filename);
+            while (!reader.EndOfStream)
+            {
+                char c = (char)reader.Read();
+                array.add(c);
+            }
         }
     }
 }
