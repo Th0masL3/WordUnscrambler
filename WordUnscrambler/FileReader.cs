@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WordUnscrambler
 {
@@ -11,23 +13,17 @@ namespace WordUnscrambler
     {
         public string[] Read(string filename)
         {
-            using (StreamReader reader = new StreamReader(filename))
+            StreamReader reader = new StreamReader(filename);
+            string content = "";
+
+            while (!reader.EndOfStream)
             {
-
-                string content = reader.ReadToEnd();
-                char[] characters = content.ToCharArray();
-
-                
-                string[] charArray = new string[characters.Length];
-                for (int i = 0; i < characters.Length; i++)
-                {
-                    charArray[i] = characters[i].ToString();
-                }
-
-                return charArray;
-
-               
+                content += reader.ReadLine() + ",";
             }
+
+            string[] stringArray = content.Split(',');
+
+            return stringArray;
         }
     }
 }

@@ -17,28 +17,36 @@ namespace WordUnscrambler
         {
             try
             {
-                Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                string question;
+                string option;
+                do {
 
-                String option = Console.ReadLine() ?? throw new Exception("String is empty");
+                    do
+                    {
+                        Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
 
-                switch (option.ToUpper())
-                {
-                    case "F":
-                        Console.WriteLine("Enter full path including the file name: ");
-                        ExecuteScrambledWordsInFileScenario();
-                        break;
-                    case "M":
-                        Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
-                        ExecuteScrambledWordsManualEntryScenario();
-                        break;
-                    default:
-                        Console.WriteLine("The entered option was not recognized.");
-                        break;
-                }
+                        option = Console.ReadLine() ?? throw new Exception("String is empty");
 
-                Console.ReadLine();
+                        switch (option.ToUpper())
+                        {
+                            case "F":
+                                Console.WriteLine("Enter full path including the file name: ");
+                                ExecuteScrambledWordsInFileScenario();
+                                break;
+                            case "M":
+                                Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
+                                ExecuteScrambledWordsManualEntryScenario();
+                                break;
+                            default:
+                                Console.WriteLine("The entered option was not recognized.");
+                                break;
+                        }
+                    } while (option.ToUpper() != "F" || option.ToUpper() != "M");
+                    Console.WriteLine("Do you wish to continue Y/N");
+                    question = Console.ReadLine();
+                    
 
-
+                }while (question.ToUpper() != "Y");
             }
             catch (Exception ex)
             {
@@ -56,6 +64,7 @@ namespace WordUnscrambler
 
         private static void ExecuteScrambledWordsManualEntryScenario()
         {
+            
         }
 
         private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
