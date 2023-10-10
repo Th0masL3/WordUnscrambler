@@ -13,45 +13,99 @@ namespace WordUnscrambler
     {
         static void Main(string[] args)
         {
-            try
+           
+            Console.WriteLine("Do you want to want to continue in french? Type Y or N: ");
+            string language = Console.ReadLine().ToUpper();
+            if ( language == "Y")
             {
-                string question;
-                string option;
-                do {
-
+                try
+                {
+                    string question;
+                    string option;
                     do
                     {
-                        Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
 
-                        option = Console.ReadLine() ?? throw new Exception("String is empty");
-
-                        switch (option.ToUpper())
+                        do
                         {
-                            case "F":
-                                Console.WriteLine("Enter full path including the file name: ");
-                                ExtensionMethods.ExecuteScrambledWordsInFileScenario();
-                                break;
-                            case "M":
-                                ExtensionMethods.ExecuteScrambledWordsManualEntryScenario();
-                                break;
-                            default:
-                                Console.WriteLine("The entered option was not recognized.");
-                                break;
-                        }
-                    } while (option.ToUpper() != "F" && option.ToUpper() != "M");
-                    Console.WriteLine("Do you wish to continue Y/N");
-                    question = Console.ReadLine();
-                    
+                            Console.WriteLine(Properties.stringsfr_CA.FMPrompt);
 
-                }while (question.ToUpper() == "Y");
+                            option = Console.ReadLine() ?? throw new Exception(Properties.stringsfr_CA.Empty);
+
+                            switch (option.ToUpper())
+                            {
+                                case "F":
+                                    Console.WriteLine(Properties.stringsfr_CA.PathPrompt);
+                                    ExtensionMethods.ExecuteScrambledWordsInFileScenario(language);
+                                    break;
+                                case "M":
+                                    ExtensionMethods.ExecuteScrambledWordsManualEntryScenario(language);
+                                    break;
+                                default:
+                                    Console.WriteLine(Properties.stringsfr_CA.Unrecognized);
+                                    break;
+                            }
+                        } while (option.ToUpper() != "F" && option.ToUpper() != "M");
+                        Console.WriteLine(Properties.stringsfr_CA.ContPrompt);
+                        question = Console.ReadLine();
+
+
+                    } while (question.ToUpper() == "O");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(Properties.stringsfr_CA.Term + ex.Message);
+
+                }
             }
-            catch (Exception ex)
+     
+            else
             {
-                Console.WriteLine("The program will be terminated." + ex.Message);
+                try
+                {
+                    string question;
+                    string option;
+                    do
+                    {
 
+                        do
+                        {
+                            Console.WriteLine(Properties.strings.FMPrompt);
+
+                            option = Console.ReadLine() ?? throw new Exception(Properties.strings.Empty);
+
+                            switch (option.ToUpper())
+                            {
+                                case "F":
+                                    Console.WriteLine(Properties.strings.PathPrompt);
+                                    ExtensionMethods.ExecuteScrambledWordsInFileScenario(language);
+                                    break;
+                                case "M":
+                                    ExtensionMethods.ExecuteScrambledWordsManualEntryScenario(language);
+                                    break;
+                                default:
+                                    Console.WriteLine(Properties.strings.Unrecognized);
+                                    break;
+                            }
+                        } while (option.ToUpper() != "F" && option.ToUpper() != "M");
+                        Console.WriteLine(Properties.strings.ContPrompt);
+                        question = Console.ReadLine();
+
+
+                    } while (question.ToUpper() == "Y");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(Properties.strings.Term + ex.Message);
+
+                }
             }
         }
     }
+
+
+
+
+
 }
 
 
