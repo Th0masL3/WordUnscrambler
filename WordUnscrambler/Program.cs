@@ -77,14 +77,10 @@ namespace WordUnscrambler
             //call a word matcher method to get a list of structs of matched words.
             List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);
 
-            foreach (object word in matchedWords)
+            foreach (MatchedWord word in matchedWords)
             {
-                Console.WriteLine(word);
+                Console.WriteLine($"scrambledWord :   {word.ScrambledWord}   matched with the word :   {word.Word}");
             }
-
-
-
-
         }
     }
 }
