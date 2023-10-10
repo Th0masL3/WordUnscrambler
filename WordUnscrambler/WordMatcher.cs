@@ -22,7 +22,7 @@ namespace WordUnscrambler
 
                     foreach (char c in characters)
                     {
-                        if (word.Length == characters.Length && word.Contains(c))
+                        if (word.Length == characters.Length && word.ToLower().Contains(Char.ToLower(c)))
                         {
                             count++;
                         }

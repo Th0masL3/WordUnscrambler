@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Globalization;
 
+
 namespace WordUnscrambler
 {
     class Program
     {
-        private static readonly FileReader _fileReader = new FileReader();
-        private static readonly WordMatcher _wordMatcher = new WordMatcher();
-
         static void Main(string[] args)
         {
             try
@@ -31,11 +29,10 @@ namespace WordUnscrambler
                         {
                             case "F":
                                 Console.WriteLine("Enter full path including the file name: ");
-                                ExecuteScrambledWordsInFileScenario();
+                                ExtensionMethods.ExecuteScrambledWordsInFileScenario();
                                 break;
                             case "M":
-                                Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
-                                ExecuteScrambledWordsManualEntryScenario();
+                                ExtensionMethods.ExecuteScrambledWordsManualEntryScenario();
                                 break;
                             default:
                                 Console.WriteLine("The entered option was not recognized.");
@@ -52,34 +49,6 @@ namespace WordUnscrambler
             {
                 Console.WriteLine("The program will be terminated." + ex.Message);
 
-            }
-        }
-
-        private static void ExecuteScrambledWordsInFileScenario()
-        {
-            var filename = Console.ReadLine();
-            string[] scrambledWords = _fileReader.Read(filename);
-            DisplayMatchedUnscrambledWords(scrambledWords);
-        }
-
-        private static void ExecuteScrambledWordsManualEntryScenario()
-        {
-            string input = Console.ReadLine();
-            string[] array = input.Split(',');
-            DisplayMatchedUnscrambledWords(array);
-        }
-
-        private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
-        {
-            //read the list of words from the system file. 
-            string[] wordList = _fileReader.Read("wordlist.txt");
-
-            //call a word matcher method to get a list of structs of matched words.
-            List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);
-
-            foreach (MatchedWord word in matchedWords)
-            {
-                Console.WriteLine($"scrambledWord :   {word.ScrambledWord}   matched with the word :   {word.Word}");
             }
         }
     }
