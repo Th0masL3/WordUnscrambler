@@ -25,6 +25,8 @@ namespace WordUnscrambler
                 }
 
                 return charArray;
+
+               
             }
         }
     }
