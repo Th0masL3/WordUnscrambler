@@ -21,7 +21,7 @@ namespace WordUnscrambler
                 content += reader.ReadLine() + ",";
             }
 
-            string[] stringArray = content.Split(',');
+            string[] stringArray = content.Substring(0, content.Length - 1).Split(',');
 
             return stringArray;
         }
