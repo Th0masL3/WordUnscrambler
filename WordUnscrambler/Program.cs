@@ -38,12 +38,12 @@ namespace WordUnscrambler
                                 Console.WriteLine("The entered option was not recognized.");
                                 break;
                         }
-                    } while (option.ToUpper() != "F" || option.ToUpper() != "M");
+                    } while (option.ToUpper() != "F" && option.ToUpper() != "M");
                     Console.WriteLine("Do you wish to continue Y/N");
                     question = Console.ReadLine();
                     
 
-                }while (question.ToUpper() != "Y");
+                }while (question.ToUpper() == "Y");
             }
             catch (Exception ex)
             {

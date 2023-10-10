@@ -24,9 +24,9 @@ namespace WordUnscrambler
             string[] wordsArray = Console.ReadLine().Split(',');
 
             Console.WriteLine("Enter scrambled word(s) manually(separated by commas if multiple): ");
-            string[] scrambledWordArray = Console.ReadLine().Split(',');
+            string[] scrambledWordsArray = Console.ReadLine().Split(',');
 
-            DisplayMatchedUnscrambledWords(scrambledWordArray, wordsArray);
+            DisplayMatchedUnscrambledWords(scrambledWordsArray, wordsArray);
         }
 
 
