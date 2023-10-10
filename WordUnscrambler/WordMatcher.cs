@@ -11,29 +11,25 @@ namespace WordUnscrambler
         public List<MatchedWord> Match(string[] scrambledWords, string[] wordList)
         {
             List<MatchedWord> matchedWords = new List<MatchedWord>();
-
-            foreach (string scrambleword in scrambledWords)
+            
+            foreach (string scrambledWord in scrambledWords) 
             {
+                char[] characters = scrambledWord.ToCharArray();
+
                 foreach (string word in wordList)
                 {
-                    char[] char1 = scrambleword.ToCharArray();
-                    char[] char2 = word.ToCharArray();
+                    int count = 0;
 
-
-                    if (char1.SequenceEqual(char2))
+                    foreach (char c in characters)
                     {
-                        MatchedWord matchedWord = new MatchedWord
+                        if (word.Length == characters.Length && word.Contains(c))
                         {
-                            ScrambledWord = scrambleword,
-                            Word = word
-                        };
-                        matchedWords.Add(matchedWord);
+                            count++;
+                        }
 
+                        if (count == characters.Length) matchedWords.Add(BuildMatchedWord(scrambledWord, word));
                     }
-
-
                 }
-                return matchedWords;
             }
 
             // Work with "scrambledWords" and "matchedWords".
@@ -43,13 +39,11 @@ namespace WordUnscrambler
                 // Build a matched-word object here, so that you can return it.
 
                 //return matchedWord;
-                return new MatchedWord();  // Delete this line when done.
+                return new MatchedWord { ScrambledWord = scrambledWord, Word = word };
             }
 
             return matchedWords;
         }
     }
 
-
 }
-
