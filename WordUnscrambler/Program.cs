@@ -11,12 +11,37 @@ namespace WordUnscrambler
 {
     class Program
     {
+
+
+
         static void Main(string[] args)
         {
            
+
+            bool FValid = false;
+            bool EValid = false;
+
             Console.WriteLine("Do you want to want to continue in french? Type Y or N: ");
             string language = Console.ReadLine().ToUpper();
-            if ( language == "Y")
+
+            switch (language)
+            {
+                case "Y":
+                    FValid = true;
+                    break;
+
+                case "N":
+                    EValid = true;
+                    break;
+
+                default:
+                    Console.WriteLine(Properties.strings.Unrecognized);
+                    break;
+
+
+            }
+
+            if (FValid is true)
             {
                 try
                 {
@@ -57,8 +82,8 @@ namespace WordUnscrambler
 
                 }
             }
-     
-            else
+
+            if (EValid is true)
             {
                 try
                 {
@@ -101,11 +126,8 @@ namespace WordUnscrambler
             }
         }
     }
-
-
-
-
-
 }
+
+
 
 
