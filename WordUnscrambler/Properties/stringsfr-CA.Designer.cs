@@ -88,6 +88,24 @@ namespace WordUnscrambler.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mot brouillé : {0} correspond au mot : {1}.
+        /// </summary>
+        internal static string Matches {
+            get {
+                return ResourceManager.GetString("Matches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aucun mots ne correspondent.
+        /// </summary>
+        internal static string NoMatches {
+            get {
+                return ResourceManager.GetString("NoMatches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entrez l&apos;adresse complète incluant le nom du fichier :.
         /// </summary>
         internal static string PathPrompt {

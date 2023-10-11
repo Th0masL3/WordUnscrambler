@@ -12,7 +12,7 @@ namespace WordUnscrambler
         {
             List<MatchedWord> matchedWords = new List<MatchedWord>();
 
-            foreach (string scrambledWord in scrambledWords) 
+            foreach (string scrambledWord in scrambledWords)
             {
                 char[] characters = scrambledWord.ToCharArray();
 
@@ -28,8 +28,12 @@ namespace WordUnscrambler
                         }
 
                         if (count == characters.Length) matchedWords.Add(BuildMatchedWord(scrambledWord, word));
+
+
                     }
+
                 }
+
             }
 
             // Work with "scrambledWords" and "matchedWords".

@@ -126,6 +126,12 @@
   <data name="FMPrompt" xml:space="preserve">
     <value>Saisir le(s) mot(s) brouillé(s) manuellement ou sous forme de fichier : F - fichier / M - manuellement</value>
   </data>
+  <data name="Matches" xml:space="preserve">
+    <value>mot brouillé : {0} correspond au mot : {1}</value>
+  </data>
+  <data name="NoMatches" xml:space="preserve">
+    <value>Aucun mots ne correspondent</value>
+  </data>
   <data name="PathPrompt" xml:space="preserve">
     <value>Entrez l'adresse complète incluant le nom du fichier :</value>
   </data>

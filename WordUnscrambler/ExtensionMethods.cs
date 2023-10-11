@@ -61,11 +61,16 @@ namespace WordUnscrambler
 
                     //call a word matcher method to get a list of structs of matched words.
                     matchedWords = _wordMatcher.Match(scrambledWordsArray, wordList);
+
+                if(matchedWords.Count <= 0) Console.WriteLine(Properties.stringsfr_CA.NoMatches);
                 
-                foreach (MatchedWord word in matchedWords)
+                else
                 {
-                    Console.WriteLine($"mot brouillé :  {word.ScrambledWord} est associé au mot :  {word.Word}");
-                }
+                    foreach (MatchedWord word in matchedWords)
+                    {
+                        Console.WriteLine(Properties.stringsfr_CA.Matches,word.ScrambledWord,word.Word);
+                    }
+                }     
             }
 
             else
@@ -77,13 +82,15 @@ namespace WordUnscrambler
 
                     //call a word matcher method to get a list of structs of matched words.
                     matchedWords = _wordMatcher.Match(scrambledWordsArray, wordList);
-                 
-                foreach (MatchedWord word in matchedWords)
+
+                if (matchedWords.Count <= 0) Console.WriteLine(Properties.strings.NoMatches);
+                else
                 {
-                    Console.WriteLine($"scrambled word :  {word.ScrambledWord}  matched with the word :  {word.Word}");
+                    foreach (MatchedWord word in matchedWords)
+                    {
+                        Console.WriteLine(Properties.strings.Matches, word.ScrambledWord, word.Word);
+                    }
                 }
-
-
             }
             
         }

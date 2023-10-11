@@ -16,32 +16,39 @@ namespace WordUnscrambler
 
         static void Main(string[] args)
         {
-           
+
 
             bool FValid = false;
             bool EValid = false;
+            string language = "";
 
-            Console.WriteLine("Do you want to want to continue in french? Type Y or N: ");
-            string language = Console.ReadLine().ToUpper();
 
-            switch (language)
+            while (FValid == false && EValid == false)
             {
-                case "Y":
-                    FValid = true;
-                    break;
+                Console.WriteLine("Do you want to want to continue in french? Type Y or N: ");
+                language = Console.ReadLine().ToUpper();
 
-                case "N":
-                    EValid = true;
-                    break;
+                switch (language)
+                {
+                    case "Y":
+                        FValid = true;
+                      
+                        break;
 
-                default:
-                    Console.WriteLine(Properties.strings.Unrecognized);
-                    break;
+                    case "N":
+                        EValid = true;
+                        break;
+
+                    default:
+                        Console.WriteLine(Properties.strings.Unrecognized);
+                        break;
+                }
 
 
             }
 
-            if (FValid is true)
+
+            if (FValid)
             {
                 try
                 {
@@ -72,9 +79,10 @@ namespace WordUnscrambler
                         } while (option.ToUpper() != "F" && option.ToUpper() != "M");
                         Console.WriteLine(Properties.stringsfr_CA.ContPrompt);
                         question = Console.ReadLine();
-
-
-                    } while (question.ToUpper() == "O");
+                       
+                    } 
+                    while (question.ToUpper() == "O");
+                    if (question.ToUpper() != "N") throw new Exception();
                 }
                 catch (Exception ex)
                 {
@@ -83,7 +91,7 @@ namespace WordUnscrambler
                 }
             }
 
-            if (EValid is true)
+            if (EValid)
             {
                 try
                 {
@@ -114,9 +122,11 @@ namespace WordUnscrambler
                         } while (option.ToUpper() != "F" && option.ToUpper() != "M");
                         Console.WriteLine(Properties.strings.ContPrompt);
                         question = Console.ReadLine();
+                       
 
-
-                    } while (question.ToUpper() == "Y");
+                    } 
+                    while (question.ToUpper() == "Y");
+                    if (question.ToUpper() != "N") throw new Exception();
                 }
                 catch (Exception ex)
                 {

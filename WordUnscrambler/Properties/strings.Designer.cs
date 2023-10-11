@@ -88,6 +88,24 @@ namespace WordUnscrambler.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to scrambled word :  {0}  matched with the word : {1}  .
+        /// </summary>
+        internal static string Matches {
+            get {
+                return ResourceManager.GetString("Matches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no matches.
+        /// </summary>
+        internal static string NoMatches {
+            get {
+                return ResourceManager.GetString("NoMatches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter full path including the file name:.
         /// </summary>
         internal static string PathPrompt {

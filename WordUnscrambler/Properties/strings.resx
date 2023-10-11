@@ -126,6 +126,12 @@
   <data name="FMPrompt" xml:space="preserve">
     <value>Enter scrambled word(s) manually or as a file: F - file / M - manually</value>
   </data>
+  <data name="Matches" xml:space="preserve">
+    <value>scrambled word :  {0}  matched with the word : {1}  </value>
+  </data>
+  <data name="NoMatches" xml:space="preserve">
+    <value>There are no matches</value>
+  </data>
   <data name="PathPrompt" xml:space="preserve">
     <value>Enter full path including the file name:</value>
   </data>
