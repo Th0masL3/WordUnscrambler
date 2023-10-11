@@ -11,7 +11,7 @@ namespace WordUnscrambler
         public List<MatchedWord> Match(string[] scrambledWords, string[] wordList)
         {
             List<MatchedWord> matchedWords = new List<MatchedWord>();
-            
+
             foreach (string scrambledWord in scrambledWords) 
             {
                 char[] characters = scrambledWord.ToCharArray();

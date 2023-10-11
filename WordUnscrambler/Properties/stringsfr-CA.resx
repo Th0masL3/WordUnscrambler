@@ -124,7 +124,7 @@
     <value>Le string est vide</value>
   </data>
   <data name="FMPrompt" xml:space="preserve">
-    <value>Saisir le(s) mot(s) brouillé(s) manuellement ou sous forme de fichier : F - fichier / M - manuel</value>
+    <value>Saisir le(s) mot(s) brouillé(s) manuellement ou sous forme de fichier : F - fichier / M - manuellement</value>
   </data>
   <data name="PathPrompt" xml:space="preserve">
     <value>Entrez l'adresse complète incluant le nom du fichier :</value>
@@ -137,8 +137,5 @@
   </data>
   <data name="Unrecognized" xml:space="preserve">
     <value>L'option saisie n'a pas été reconnue.</value>
-  </data>
-  <data name="WordsPrompt" xml:space="preserve">
-    <value>Saisissez le(s) mot(s) manuellement (séparés par des virgules s'il y en a plusieurs) :</value>
   </data>
 </root>

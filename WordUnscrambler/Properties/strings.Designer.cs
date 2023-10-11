@@ -79,7 +79,7 @@ namespace WordUnscrambler.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter scrambled word(s) manually or as a file: F - file / M - manual.
+        ///   Looks up a localized string similar to Enter scrambled word(s) manually or as a file: F - file / M - manually.
         /// </summary>
         internal static string FMPrompt {
             get {
@@ -120,15 +120,6 @@ namespace WordUnscrambler.Properties {
         internal static string Unrecognized {
             get {
                 return ResourceManager.GetString("Unrecognized", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter word(s) manually (separated by commas if multiple):.
-        /// </summary>
-        internal static string WordsPrompt {
-            get {
-                return ResourceManager.GetString("WordsPrompt", resourceCulture);
             }
         }
     }

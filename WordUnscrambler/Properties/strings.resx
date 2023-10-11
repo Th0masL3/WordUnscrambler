@@ -124,7 +124,7 @@
     <value>String is empty</value>
   </data>
   <data name="FMPrompt" xml:space="preserve">
-    <value>Enter scrambled word(s) manually or as a file: F - file / M - manual</value>
+    <value>Enter scrambled word(s) manually or as a file: F - file / M - manually</value>
   </data>
   <data name="PathPrompt" xml:space="preserve">
     <value>Enter full path including the file name:</value>
@@ -137,8 +137,5 @@
   </data>
   <data name="Unrecognized" xml:space="preserve">
     <value>The entered option was not recognized.</value>
-  </data>
-  <data name="WordsPrompt" xml:space="preserve">
-    <value>Enter word(s) manually (separated by commas if multiple):</value>
   </data>
 </root>

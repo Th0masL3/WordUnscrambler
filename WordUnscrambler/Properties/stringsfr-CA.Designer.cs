@@ -79,7 +79,7 @@ namespace WordUnscrambler.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saisir le(s) mot(s) brouillé(s) manuellement ou sous forme de fichier : F - fichier / M - manuel.
+        ///   Looks up a localized string similar to Saisir le(s) mot(s) brouillé(s) manuellement ou sous forme de fichier : F - fichier / M - manuellement.
         /// </summary>
         internal static string FMPrompt {
             get {
@@ -120,15 +120,6 @@ namespace WordUnscrambler.Properties {
         internal static string Unrecognized {
             get {
                 return ResourceManager.GetString("Unrecognized", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Saisissez le(s) mot(s) manuellement (séparés par des virgules s&apos;il y en a plusieurs) :.
-        /// </summary>
-        internal static string WordsPrompt {
-            get {
-                return ResourceManager.GetString("WordsPrompt", resourceCulture);
             }
         }
     }
